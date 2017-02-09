@@ -1,4 +1,5 @@
-﻿using DmAutoTesting.WebDrivers;
+﻿using DmAutoTesting.Browsers.Adapters;
+using DmAutoTesting.WebDrivers;
 
 namespace DmAutoTesting.Browsers.Factories
 {
@@ -13,9 +14,10 @@ namespace DmAutoTesting.Browsers.Factories
             this.compositeWebDriverFactory = compositeWebDriverFactory;
         }
 
-        public IBrowserAdapter Create(string logPath)
+        public IBrowserAdapter Create(BrowserType browserType, string logPath)
         {
-            return new SeleniumBrowserAdapter(compositeWebDriverFactory, logPath);
+            var webDriver = compositeWebDriverFactory.Create(browserType, logPath);
+            return new SeleniumBrowserAdapter(webDriver);
         }
     }
 }
