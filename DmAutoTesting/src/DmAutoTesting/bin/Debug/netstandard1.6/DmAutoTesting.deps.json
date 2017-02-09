@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v1.6/",
-    "signature": "9fd12bcc7114c9717c2036398408e9484f5bf865"
+    "signature": "ad0d0f1f16d3bbc4aff683cfc93e71925d55debc"
   },
   "compilationOptions": {},
   "targets": {
@@ -16,10 +16,20 @@
           "log4net": "2.0.7",
           "CoreCompat.Selenium.WebDriver": "2.54.0-beta002",
           "Newtonsoft.Json": "9.0.1",
-          "Microsoft.Extensions.Configuration": "1.1.0"
+          "Microsoft.Extensions.Configuration": "1.1.0",
+          "Autofac": "4.3.0"
         },
         "runtime": {
           "DmAutoTesting.dll": {}
+        }
+      },
+      "Autofac/4.3.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.ComponentModel": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "CoreCompat.Selenium.WebDriver/2.54.0-beta002": {
@@ -1402,6 +1412,11 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Autofac/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fCrt0EBW99+q1R6iA3+JBYmtfCDYfMHzsAtaDZ8/kbq9tW+Ze5W8SrxwTHqpbPI4Cp4/0NeJDaODD+D3cOfdHQ=="
     },
     "CoreCompat.Selenium.WebDriver/2.54.0-beta002": {
       "type": "package",

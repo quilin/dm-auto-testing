@@ -12,6 +12,7 @@
 --version:1.0.0.0
 --informational-version:1.0.0
 --target-framework:.NETStandard,Version=v1.6
+--reference:C:\Users\Vladislav_Kilin\.nuget\packages\Autofac\4.3.0\lib\netstandard1.1\Autofac.dll
 --reference:C:\Users\Vladislav_Kilin\.nuget\packages\CoreCompat.Selenium.WebDriver\2.54.0-beta002\lib\netstandard1.5\CoreCompat.Selenium.WebDriver.dll
 --reference:C:\Users\Vladislav_Kilin\.nuget\packages\CoreCompat.System.Drawing\1.0.0-beta006\lib\netstandard1.3\CoreCompat.System.Drawing.dll
 --reference:C:\Users\Vladislav_Kilin\.nuget\packages\log4net\2.0.7\lib\netstandard1.3\log4net.dll
@@ -101,10 +102,12 @@ D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Browsers
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Browsers\Factories\BrowserFactory.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Browsers\Factories\IBrowserAdapterFactory.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Browsers\Factories\IBrowserFactory.cs
-D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Browsers\Factories\SeleniumBrowserAdapterFactory.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Browsers\Pool\BrowserPool.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Browsers\Pool\IBrowserPool.cs
-D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Core\Wait.cs
+D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Configuration\DmAutoTestingConfiguration.cs
+D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Configuration\DmConfigurationProvider.cs
+D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Configuration\IDmConfigurationProvider.cs
+D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Core\DmAutoTestingInitializer.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Elements\BaseElement.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Elements\Component.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Elements\Element.cs
@@ -131,6 +134,7 @@ D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Pages\Fa
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Properties\AssemblyInfo.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Services\ITestingService.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Services\TestingService.cs
+D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Utils\Wait.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\WebDrivers\CompositeWebDriverFactory.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\WebDrivers\GeckoWebDriverFactory.cs
 D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\WebDrivers\ICompositeWebDriverFactory.cs

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace DmAutoTesting.Core
+namespace DmAutoTesting.Utils
 {
     public class Wait
     {

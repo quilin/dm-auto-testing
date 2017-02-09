@@ -1,9 +1,9 @@
 ﻿using System;
 using DmAutoTesting.Browsers.Adapters;
-using DmAutoTesting.Core;
 using DmAutoTesting.Pages;
 using DmAutoTesting.Pages.Adapters;
 using DmAutoTesting.Pages.Factories;
+using DmAutoTesting.Utils;
 
 namespace DmAutoTesting.Browsers
 {

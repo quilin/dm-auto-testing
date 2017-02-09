@@ -3,6 +3,19 @@
   "version": 2,
   "targets": {
     ".NETStandard,Version=v1.6": {
+      "Autofac/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        }
+      },
       "CoreCompat.Selenium.WebDriver/2.54.0-beta002": {
         "type": "package",
         "dependencies": {
@@ -2117,6 +2130,19 @@
     }
   },
   "libraries": {
+    "Autofac/4.3.0": {
+      "sha512": "fCrt0EBW99+q1R6iA3+JBYmtfCDYfMHzsAtaDZ8/kbq9tW+Ze5W8SrxwTHqpbPI4Cp4/0NeJDaODD+D3cOfdHQ==",
+      "type": "package",
+      "path": "Autofac/4.3.0",
+      "files": [
+        "Autofac.4.3.0.nupkg.sha512",
+        "Autofac.nuspec",
+        "lib/net45/Autofac.dll",
+        "lib/net45/Autofac.xml",
+        "lib/netstandard1.1/Autofac.dll",
+        "lib/netstandard1.1/Autofac.xml"
+      ]
+    },
     "CoreCompat.Selenium.WebDriver/2.54.0-beta002": {
       "sha512": "VYBBKdqJ4um0D0tpHKFDd8pBD+88616euqQajSPzgnk2by3do02cJYNh4OJO5puT5/KQlGFrAhP6TDlXjrE7rw==",
       "type": "package",
@@ -6676,6 +6702,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Autofac >= 4.3.0",
       "CoreCompat.Selenium.WebDriver >= 2.54.0-beta002",
       "CoreCompat.System.Drawing >= 1.0.0-beta006",
       "Microsoft.Extensions.Configuration >= 1.1.0",
