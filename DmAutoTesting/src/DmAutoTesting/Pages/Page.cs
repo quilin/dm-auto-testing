@@ -1,27 +1,25 @@
-﻿using DmAutoTesting.Browsers;
-using DmAutoTesting.Elements;
+﻿using DmAutoTesting.Elements.Searchers;
+using DmAutoTesting.Pages.Adapters;
 
 namespace DmAutoTesting.Pages
 {
-    public abstract class Page
+    public class Page : IPage
     {
-        private IPageAdapter pageAdapter;
-        internal object PageId { get; private set; }
-        public string Title => pageAdapter.Title;
-        public abstract bool IsLoaded { get; }
-        public abstract bool IsError { get; }
-        public IElementGetter Get { get; private set; }
-        public IElementFinder FindAll { get; private set; }
-
-        public void Initialize(IPageAdapter pageAdapter, IBrowser browser)
+        private IPageAdapter page;
+        private ElementSearcher elementSearcher;
+        
+        public void Initialize(IPageAdapter pageAdapter)
         {
-            this.pageAdapter = pageAdapter;
-            PageId = pageAdapter.PageId;
-            browser.JavaScriptExecutor.DisableAnimations();
-
-            var elementSearcher = new ElementSearcher(pageAdapter.ElementLocator, browser);
-            Get = elementSearcher;
-            FindAll = elementSearcher;
+            page = pageAdapter;
+            elementSearcher = new ElementSearcher(page.ElementLocator);
         }
+
+        public string Id => page.PageId;
+        public string Url => page.Url;
+        public string Title => page.Title;
+        public virtual bool IsLoaded => true;
+        public virtual bool IsError => false;
+        public IElementGetter Get => elementSearcher;
+        public IElementFinder Find => elementSearcher;
     }
 }

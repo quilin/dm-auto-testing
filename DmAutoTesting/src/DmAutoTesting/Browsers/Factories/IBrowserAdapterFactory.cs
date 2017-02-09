@@ -1,7 +1,9 @@
-﻿namespace DmAutoTesting.Browsers.Factories
+﻿using DmAutoTesting.Browsers.Adapters;
+
+namespace DmAutoTesting.Browsers.Factories
 {
     public interface IBrowserAdapterFactory
     {
-        IBrowserAdapter Create(string logPath);
+        IBrowserAdapter Create(BrowserType browserType, string logPath);
     }
 }

@@ -1,24 +1,19 @@
 ﻿using System;
 using DmAutoTesting.Pages;
-using DmAutoTesting.WebDrivers;
 
 namespace DmAutoTesting.Browsers
 {
     public interface IBrowser : IDisposable
     {
-        bool CanManageCookies { get; }
-        string LogPath { get; }
-        IJavaScriptExecutor JavaScriptExecutor { get; }
+        IPage WaitForPage(string url);
+        T WaitFor<T>() where T : IPage, new();
 
-        void ClearCookies();
-        void SetCookie(string name, string value);
-        void GoTo(string url);
-        void SwitchToTab(Page page);
-        T OpenNewTab<T>(string uri) where T : Page, new();
-        void CloseCurrentTab();
-        T GoToPage<T>(string uri) where T : Page, new();
-        T WaitForPage<T>() where T : Page, new();
-        void SaveFile(string fileName, string url);
-        void SaveScreenshot();
+        IPage SwitchToTab(IPage page);
+        T SwitchToTab<T>(T page) where T : IPage, new();
+
+        IPage OpenNewTab(string uri);
+        T OpenNewTab<T>() where T : IPage, new();
+
+        IPage CloseCurrentTab();
     }
 }

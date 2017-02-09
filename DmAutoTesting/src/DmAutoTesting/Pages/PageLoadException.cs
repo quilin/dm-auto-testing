@@ -2,11 +2,10 @@
 
 namespace DmAutoTesting.Pages
 {
-    public class PageLoadException<T> : Exception
-        where T : Page
+    public class PageLoadException<TPage> : Exception
+        where TPage : IPage
     {
-        public PageLoadException(string pageTitle, string url)
-            : base($"Unable to load page {typeof(T).Name}. Page with title {pageTitle} is loaded instead. Url: {url}")
+        public PageLoadException(string url) : base($"Unable to load page {typeof(TPage).Name} by url {url}")
         {
         }
     }

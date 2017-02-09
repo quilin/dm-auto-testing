@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace DmAutoTesting.Core
 {
-    public static class Wait
+    public class Wait
     {
         public static void For(Func<bool> waitFunc, int timeout = 5000, string timeoutMessage = "Timeout exception")
         {

@@ -1,14 +1,9 @@
-﻿using System.ComponentModel;
-
-namespace DmAutoTesting.Browsers
+﻿namespace DmAutoTesting.Browsers
 {
     public enum BrowserType
     {
-        [Description("Chrome, Chromium, Safari, Opera")]
-        Webkit,
-        [Description("Firefox")]
+        Webkit = 0,
         Gecko,
-        [Description("Internet Explorer")]
         Trident
     }
 }

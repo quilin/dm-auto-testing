@@ -7,7 +7,7 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>533d8428-c03b-4c3c-94c5-fa9ace8b48d2</ProjectGuid>
+    <ProjectGuid>6a459bc0-5205-49ee-971a-85e305d24b2a</ProjectGuid>
     <RootNamespace>DmAutoTesting</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>

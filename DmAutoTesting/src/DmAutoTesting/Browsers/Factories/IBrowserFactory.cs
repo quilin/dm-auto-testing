@@ -2,6 +2,6 @@
 {
     public interface IBrowserFactory
     {
-        IBrowser Create(string siteUrl);
+        IBrowser Create(BrowserType browserType);
     }
 }
