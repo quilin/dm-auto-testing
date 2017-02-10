@@ -7,7 +7,6 @@ namespace DmAutoTesting.Browsers.Adapters
 {
     public interface IBrowserAdapter : IDisposable
     {
-        IPageAdapter CurrentPage { get; }
         IPageAdapter GoTo(string url);
         IPageAdapter OpenNewTab(string url);
         IPageAdapter SwitchToTab(object pageId);

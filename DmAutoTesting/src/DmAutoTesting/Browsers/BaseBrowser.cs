@@ -20,9 +20,9 @@ namespace DmAutoTesting.Browsers
             pageFactory = new PageFactory();
         }
 
-        private T CreateAndWaitForPage<T>(Func<IPageAdapter> getAdapter) where T : IPage, new()
+        private void InitializeAndWaitForPage<T>(Action<T> initialize, T page) where T : IPage, new()
         {
-            var page = pageFactory.Create<T>(getAdapter());
+            initialize(page);
             Wait.For(() =>
             {
                 if (page.IsError)
@@ -31,23 +31,38 @@ namespace DmAutoTesting.Browsers
                 }
                 return page.IsLoaded;
             }, 60000);
+            CurrentPage = page;
+        }
+
+        private T CreateAndWaitForPage<T>(Func<IPageAdapter> getAdapter) where T : IPage, new()
+        {
+            var page = pageFactory.Create<T>();
+            InitializeAndWaitForPage(p => p.Initialize(getAdapter(), this), page);
             return page;
         }
 
+        private T CreateAndWaitForPage<T>(Func<string, IPageAdapter> getAdapter) where T : IPage, new()
+        {
+            var page = pageFactory.Create<T>();
+            InitializeAndWaitForPage(p => p.Initialize(getAdapter(page.Uri), this), page);
+            return page;
+        }
+
+        public IPage CurrentPage { get; private set; }
+
         public IPage WaitForPage(string url)
         {
-            return CreateAndWaitForPage<Page>(() => BrowserAdapter.GoTo(url));
+            return CreateAndWaitForPage<BasePage>(() => BrowserAdapter.GoTo(url));
         }
 
         public T WaitFor<T>() where T : IPage, new()
         {
-            // TODO: Cyclic dependency here, CurrentPage is a wrong PageAdapter
-            return CreateAndWaitForPage<T>(() => BrowserAdapter.CurrentPage);
+            return CreateAndWaitForPage<T>(url => BrowserAdapter.GoTo(url));
         }
 
         public IPage SwitchToTab(IPage page)
         {
-            return CreateAndWaitForPage<Page>(() => BrowserAdapter.SwitchToTab(page.Id));
+            return CreateAndWaitForPage<BasePage>(() => BrowserAdapter.SwitchToTab(page.Id));
         }
 
         public T SwitchToTab<T>(T page) where T : IPage, new()
@@ -57,18 +72,17 @@ namespace DmAutoTesting.Browsers
 
         public IPage OpenNewTab(string url)
         {
-            return CreateAndWaitForPage<Page>(() => BrowserAdapter.OpenNewTab(url));
+            return CreateAndWaitForPage<BasePage>(() => BrowserAdapter.OpenNewTab(url));
         }
 
         public T OpenNewTab<T>() where T : IPage, new()
         {
-            // TODO: Cyclic dependency here, CurrentPage is a wrong PageAdapter
-            return CreateAndWaitForPage<T>(() => BrowserAdapter.CurrentPage);
+            return CreateAndWaitForPage<T>((url) => BrowserAdapter.OpenNewTab(url));
         }
 
         public IPage CloseCurrentTab()
         {
-            return CreateAndWaitForPage<Page>(() => BrowserAdapter.CloseCurrentTab());
+            return CreateAndWaitForPage<BasePage>(() => BrowserAdapter.CloseCurrentTab());
         }
 
         public void Dispose()

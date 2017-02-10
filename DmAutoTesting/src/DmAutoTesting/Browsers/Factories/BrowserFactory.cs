@@ -17,7 +17,7 @@ namespace DmAutoTesting.Browsers.Factories
         public IBrowser Create(BrowserType browserType)
         {
             var number = Interlocked.Increment(ref lastBrowserLogNumber);
-            var logPath = "todo";
+            var logPath = $"todo{number}.txt";
             var browserAdapter = browserAdapterFactory.Create(browserType, logPath);
             return new BaseBrowser(browserAdapter);
         }

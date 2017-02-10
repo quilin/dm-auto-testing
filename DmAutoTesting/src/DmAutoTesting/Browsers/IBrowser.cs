@@ -5,6 +5,8 @@ namespace DmAutoTesting.Browsers
 {
     public interface IBrowser : IDisposable
     {
+        IPage CurrentPage { get; }
+
         IPage WaitForPage(string url);
         T WaitFor<T>() where T : IPage, new();
 

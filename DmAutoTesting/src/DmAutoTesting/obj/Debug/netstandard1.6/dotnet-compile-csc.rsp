@@ -122,6 +122,7 @@
 "D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Elements\Searchers\IElementGetter.cs"
 "D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Elements\Searchers\IElementLocator.cs"
 "D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Elements\Searchers\SeleniumElementLocator.cs"
+"D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Pages\BasePage.cs"
 "D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Pages\IPage.cs"
 "D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Pages\Page.cs"
 "D:\test\dm-auto-testing\dm-auto-testing\DmAutoTesting\src\DmAutoTesting\Pages\PageLoadException.cs"

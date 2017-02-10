@@ -1,11 +1,15 @@
-﻿using DmAutoTesting.Elements.Searchers;
+﻿using DmAutoTesting.Browsers;
+using DmAutoTesting.Elements.Searchers;
 using DmAutoTesting.Pages.Adapters;
 
 namespace DmAutoTesting.Pages
 {
     public interface IPage
     {
-        void Initialize(IPageAdapter pageAdapter);
+        IBrowser Browser { get; }
+        string Uri { get; }
+        
+        void Initialize(IPageAdapter pageAdapter, IBrowser browser);
 
         string Id { get; }
         string Url { get; }
